@@ -42,7 +42,6 @@ const Header: React.FC<HeaderProps> = ({ isDark, setIsDark }) => {
             peter_portfolio<span className="text-neon-green">.</span>
           </a>
 
-          {/* Mobile Menu */}
           <HamburgerMenu
             isOpen={isMenuOpen}
             isDark={isDark}
@@ -52,7 +51,6 @@ const Header: React.FC<HeaderProps> = ({ isDark, setIsDark }) => {
             navLinks={navLinks}
           />
           
-          {/* Desktop Navigation */}
           <div className={desktopNavStyles()}>
             {navLinks.map(({ href, label }) => (
               <a
@@ -65,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, setIsDark }) => {
             ))}
             <LanguageSelector />
             <button
-              onClick={() => setIsDark(!isDark)}
+              onClick={() => () => undefined}
               className="p-2 rounded-lg hover:bg-white/5 transition-colors"
               aria-label={t('common:theme.toggle')}
             >

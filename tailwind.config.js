@@ -8,6 +8,7 @@ export default {
         'neon-green': '#238636',
         'tech-gray': '#30363D',
         'digital-white': '#F6F8FA',
+        'cool-gray': '#788289',
       },
       fontFamily: {
         mono: ['JetBrains Mono', 'monospace'],

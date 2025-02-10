@@ -1,30 +1,27 @@
 import { type Locator } from '@playwright/test';
 import { BasePage } from './base.page';
+import { type Page } from '@playwright/test';
 
 export class HomePage extends BasePage {
-  // Navigation
   readonly getInTouchButton: Locator;
   readonly navLinks: Locator;
   readonly languageSelector: Locator;
   readonly themeToggle: Locator;
 
-  // Contact Form
   readonly contactForm: Locator;
   readonly nameInput: Locator;
   readonly emailInput: Locator;
   readonly messageInput: Locator;
   readonly submitButton: Locator;
 
-  constructor(page: any) {
+  constructor(page: Page) {
     super(page);
     
-    // Initialize navigation locators
     this.getInTouchButton = page.getByRole('link', { name: /get in touch/i });
     this.navLinks = page.locator('nav a[href^="#"]');
     this.languageSelector = page.getByRole('button', { name: /select language/i });
     this.themeToggle = page.getByRole('button', { name: /toggle theme/i });
 
-    // Initialize form locators
     this.contactForm = page.locator('#contact-section form');
     this.nameInput = this.contactForm.getByLabel(/name/i);
     this.emailInput = this.contactForm.getByLabel(/email/i);

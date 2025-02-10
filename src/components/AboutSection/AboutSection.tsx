@@ -38,7 +38,7 @@ const SectionHeader: React.FC = () => {
         <h2 className="text-4xl md:text-5xl font-bold font-mono tracking-tight mb-4">
           {t('about:title')}
         </h2>
-        <p className="text-tech-gray text-lg">
+        <p className="text-gray-400 text-lg">
           {t('about:subtitle')}
         </p>
       </div>
@@ -55,7 +55,7 @@ const MainContent: React.FC<{ parallaxRef: React.RefObject<HTMLDivElement> }> = 
 
 const MissionOverview: React.FC = () => {
   const { t } = useTranslation();
-  
+
   return (
     <div className="space-y-6">
       <div className="relative group">
@@ -63,7 +63,7 @@ const MissionOverview: React.FC = () => {
         <div className={cardStyles()}>
           <div className="space-y-4">
             <h3 className="text-2xl font-bold mb-4">{t('about:missionOverview.title')}</h3>
-            <p className="text-tech-gray">
+            <p className="text-gray-400">
               {t('about:missionOverview.description')}
             </p>
           </div>
@@ -75,12 +75,12 @@ const MissionOverview: React.FC = () => {
 
 const ProfileImage: React.FC = () => {
   const { t } = useTranslation();
-  
+
   return (
     <div className="relative group">
       <div className={imageContainerStyles()}>
         <img
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+          src="https://placehold.co/800x600"
           alt={t('about:missionOverview.title')}
           className="rounded-lg shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
         />
@@ -114,7 +114,7 @@ const GrainOverlay: React.FC = () => (
 
 const ExpertiseGrid: React.FC = () => {
   const { t } = useTranslation();
-  
+
   const expertiseItems = [
     {
       icon: Lightbulb,
@@ -151,7 +151,7 @@ const ExpertiseCard: React.FC<ExpertiseCardProps> = ({ icon: Icon, title, descri
       </div>
       <h3 className="text-xl font-bold">{title}</h3>
     </div>
-    <p className="text-tech-gray">{description}</p>
+    <p className="text-gray-400">{description}</p>
   </div>
 );
 

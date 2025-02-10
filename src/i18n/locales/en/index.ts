@@ -7,6 +7,7 @@ import projects from './projects.json';
 import contact from './contact.json';
 import footer from './footer.json';
 import console from './console.json';
+import error from './error.json';
 
 export default {
   common,
@@ -17,5 +18,6 @@ export default {
   projects,
   contact,
   footer,
-  console
+  console,
+  error
 };

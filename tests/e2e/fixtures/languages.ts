@@ -1,4 +1,4 @@
-{
+export const languages = {
   "english": {
     "code": "en",
     "label": "English",

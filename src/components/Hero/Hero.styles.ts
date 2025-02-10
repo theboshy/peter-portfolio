@@ -1,19 +1,23 @@
 import { tv } from 'tailwind-variants';
 
 export const heroStyles = tv({
-  base: 'relative min-h-screen flex items-center justify-center overflow-hidden'
+  base: [
+    'relative min-h-screen flex items-center justify-center overflow-hidden',
+    'before:content-[""] before:absolute before:inset-0 before:bg-space-black/70',
+    'after:content-[""] after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_center,rgba(35,134,54,0.15)_0%,transparent_60%)]'
+  ]
 });
 
 export const titleStyles = tv({
-  base: 'text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-neon-green bg-clip-text text-transparent animate-fade-in'
+  base: 'text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-neon-green bg-clip-text text-transparent animate-fade-in relative z-10'
 });
 
 export const descriptionStyles = tv({
-  base: 'text-xl md:text-2xl text-tech-gray mb-12 animate-fade-in-delay'
+  base: 'text-xl md:text-2xl text-digital-white mb-12 animate-fade-in-delay relative z-10'
 });
 
 export const buttonContainerStyles = tv({
-  base: 'flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-delay-2'
+  base: 'flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in-delay-2 relative z-10'
 });
 
 export const primaryButtonStyles = tv({
@@ -35,5 +39,15 @@ export const secondaryButtonStyles = tv({
     'overflow-hidden',
     'transition-transform duration-300 ease-out hover:scale-[1.02]',
     'focus:outline-none focus:ring-2 focus:ring-neon-green/50 focus:ring-offset-2 focus:ring-offset-space-black'
+  ]
+});
+
+export const starLayerStyles = tv({
+  base: [
+    'absolute inset-0',
+    'opacity-40',
+    'after:content-[""] after:absolute after:inset-0',
+    'after:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.2)_1px,transparent_1px)]',
+    'after:bg-space-black after:bg-[length:20px_20px]'
   ]
 });

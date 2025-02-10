@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pom/pages/home.page';
-import viewports from '../fixtures/viewports.json';
-import languages from '../fixtures/languages.json';
+import {viewports} from "../fixtures/viewports";
+import {languages} from "../fixtures/languages";
 
 test.describe('Navigation', () => {
   let homePage: HomePage;
@@ -31,7 +31,7 @@ test.describe('Navigation', () => {
   });
 
   test('should maintain navigation functionality across viewports', async () => {
-    for (const [name, viewport] of Object.entries(viewports)) {
+    for (const [viewport] of Object.entries(viewports)) {
       const layout = await homePage.verifyResponsiveLayout(viewport);
       expect(layout.isNavigationVisible).toBeTruthy();
     }

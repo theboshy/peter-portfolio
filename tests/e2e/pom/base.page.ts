@@ -26,7 +26,7 @@ export class BasePage {
   async getComputedStyle(selector: string, property: string) {
     const element = this.page.locator(selector);
     return element.evaluate((el, prop) => 
-      window.getComputedStyle(el)[prop as any],
+      window.getComputedStyle(el)[prop],
       property
     );
   }

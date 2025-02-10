@@ -1,4 +1,4 @@
-{
+export const viewports = {
   "mobile": {
     "width": 375,
     "height": 667,

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef, useEffect } from 'react';
 import {
   Calendar,
   Award,
@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { TimelineEntry } from '#types/common.ts';
+import { useTimelineScroll } from './useTimelineScroll';
 import {
   timelineStyles,
   headerStyles,
@@ -20,43 +21,19 @@ const HorizontalTimeline: React.FC = () => {
   const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
-
-  const handleMouseDown = useCallback((e: React.MouseEvent) => {
-    if (!scrollContainerRef.current) return;
-    isDragging.current = true;
-    startX.current = e.pageX - scrollContainerRef.current.offsetLeft;
-    scrollLeft.current = scrollContainerRef.current.scrollLeft;
-  }, []);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent) => {
-    if (!isDragging.current || !scrollContainerRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollContainerRef.current.offsetLeft;
-    const walk = (x - startX.current) * 2;
-    scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
-  }, []);
-
-  const handleMouseUp = useCallback(() => {
-    isDragging.current = false;
-  }, []);
+  
+  const {
+    handleMouseMove,
+    handleMouseDown,
+    handleMouseUp,
+    handleDragMove,
+    cleanup,
+    isMobile
+  } = useTimelineScroll(containerRef, scrollContainerRef);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleMouseLeave = () => {
-      isDragging.current = false;
-    };
-
-    container.addEventListener('mouseleave', handleMouseLeave);
-    return () => {
-      container.removeEventListener('mouseleave', handleMouseLeave);
-      isDragging.current = false;
-    };
-  }, []);
+    return () => cleanup();
+  }, [cleanup]);
 
   const timelineEntries = ['award2025', 'project2024Sep', 'career2024Jun', 'education2024Mar'];
 
@@ -80,15 +57,17 @@ const HorizontalTimeline: React.FC = () => {
 
         <div 
           ref={containerRef}
-          className="relative cursor-grab active:cursor-grabbing"
-          onMouseDown={handleMouseDown}
+          className={`relative ${isMobile ? 'cursor-grab active:cursor-grabbing' : 'cursor-default'}`}
           onMouseMove={handleMouseMove}
+          onMouseDown={handleMouseDown}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseUp}
+          onMouseOut={handleMouseUp}
         >
           <div
             ref={scrollContainerRef}
             className="overflow-x-hidden relative"
+            onMouseMove={isMobile ? handleDragMove : undefined}
           >
             <div className="flex items-start gap-8 p-4 min-w-max">
               {timelineData.map((entry, index) => (
@@ -102,22 +81,14 @@ const HorizontalTimeline: React.FC = () => {
   );
 };
 
-interface TimelineCardProps {
-  entry: TimelineEntry;
-}
-
-const TimelineCard: React.FC<TimelineCardProps> = ({ entry }) => (
+const TimelineCard: React.FC<{ entry: TimelineEntry }> = ({ entry }) => (
   <div className={timelineCardStyles()}>
     <TimelineNode type={entry.type} />
     <CardContent entry={entry} />
   </div>
 );
 
-interface TimelineNodeProps {
-  type: string;
-}
-
-const TimelineNode: React.FC<TimelineNodeProps> = ({ type }) => {
+const TimelineNode: React.FC<{ type: string }> = ({ type }) => {
   const nodeColors: Record<string, string> = {
     achievement: 'bg-purple-500',
     education: 'bg-blue-500',
@@ -138,8 +109,7 @@ const TimelineNode: React.FC<TimelineNodeProps> = ({ type }) => {
   );
 };
 
-const CardContent: React.FC<TimelineCardProps> = ({ entry }) => {
-
+const CardContent: React.FC<{ entry: TimelineEntry }> = ({ entry }) => {
   const icons = {
     achievement: Trophy,
     education: GraduationCap,

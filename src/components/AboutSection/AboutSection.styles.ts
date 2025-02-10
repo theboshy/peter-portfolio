@@ -1,11 +1,11 @@
 import { tv } from 'tailwind-variants';
 
 export const sectionStyles = tv({
-  base: 'relative py-16' // Reduced from py-24 to py-16
+  base: 'relative py-16'
 });
 
 export const headerStyles = tv({
-  base: 'text-center mb-12' // Reduced from mb-16 to mb-12
+  base: 'text-center mb-12'
 });
 
 export const cardStyles = tv({

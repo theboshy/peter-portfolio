@@ -53,7 +53,7 @@ export interface FormErrors {
 }
 
 export interface ExpertiseItem {
-  icon: React.FC<{ size?: number }>;
+  icon: LucideIcon;
   title: string;
   description: string;
   skills: string[];
@@ -106,4 +106,8 @@ export interface BaseComponentProps extends StyleProps, EventHandlerProps {
 export interface TranslationKey {
   key: string;
   params?: Record<string, unknown>;
+}
+
+export interface SkillTagsProps {
+  skills: string[];
 }

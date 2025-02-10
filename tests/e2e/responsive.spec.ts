@@ -43,7 +43,7 @@ test.describe('Responsive Design', () => {
     }
   });
 
-  test('should handle different screen sizes', async ({ browserName }) => {
+  test('should handle different screen sizes', async () => {
     // Test different viewport sizes
     const viewports = [
       { width: 375, height: 667 },  // iPhone SE

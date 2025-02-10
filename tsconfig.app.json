@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "#components/*": ["./src/components/*"],
+      "#providers/*": ["./src/providers/*"],
       "#hooks/*": ["./src/hooks/*"],
       "#types/*": ["./src/types/*"],
       "#styles/*": ["./src/styles/*"],

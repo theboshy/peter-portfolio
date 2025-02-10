@@ -9,7 +9,8 @@ import {
   descriptionStyles,
   buttonContainerStyles,
   primaryButtonStyles,
-  secondaryButtonStyles
+  secondaryButtonStyles,
+  starLayerStyles
 } from './Hero.styles';
 import type { HeroProps } from '#types/common';
 
@@ -17,15 +18,19 @@ const Hero: React.FC<HeroProps> = ({ isDark = true }) => {
   const heroRef = useRef<HTMLElement>(null);
   const { particlesRef, handleScrollToContact } = useParticles();
   const { spotlightStyle } = useHeroSpotlight(heroRef, {
-    size: 300,
+    size: 100,
     color: isDark ? '#238636' : '#30363D',
-    opacity: 0.15,
+    opacity: 0.30,
     blur: 100,
     enabled: isDark
   });
 
   return (
-    <section ref={heroRef} className={`${heroStyles()} relative overflow-hidden`}>
+    <section ref={heroRef} className={heroStyles()}>
+      <div className={starLayerStyles()} />
+
+      <div ref={particlesRef} className="fixed inset-0 pointer-events-none z-50" />
+      
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute pointer-events-none transition-opacity duration-300"
@@ -33,7 +38,6 @@ const Hero: React.FC<HeroProps> = ({ isDark = true }) => {
         />
       </div>
 
-      <div ref={particlesRef} className="fixed inset-0 pointer-events-none z-50" />
       <BackgroundEffects />
       <Content onContactClick={handleScrollToContact} />
       <ScrollIndicator />
@@ -42,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ isDark = true }) => {
 };
 
 const BackgroundEffects: React.FC = () => (
-  <div className="absolute inset-0 overflow-hidden">
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
     <div className="absolute top-20 left-[20%] animate-float-slow">
       <Code className="text-neon-green/20 w-12 h-12" />
     </div>
@@ -109,7 +113,7 @@ const CTAButtons: React.FC<CTAButtonsProps> = ({ onContactClick }) => {
 };
 
 const ScrollIndicator: React.FC = () => (
-  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
     <div className="w-6 h-10 border-2 border-tech-gray rounded-full flex items-start justify-center p-2">
       <div className="w-1 h-3 bg-neon-green rounded-full animate-scroll" />
     </div>

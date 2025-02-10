@@ -8,13 +8,7 @@ import {
   iconContainerStyles,
   skillTagStyles
 } from './ExpertiseSection.styles';
-
-interface ExpertiseItem {
-  icon: React.FC<{ size?: number }>;
-  title: string;
-  description: string;
-  skills: string[];
-}
+import {ExpertiseItem, SkillTagsProps} from "#types/common.ts";
 
 const ExpertiseSection: React.FC = () => {
   const { t } = useTranslation();
@@ -24,25 +18,25 @@ const ExpertiseSection: React.FC = () => {
       icon: Code2,
       title: t('expertise:areas.frontend.title'),
       description: t('expertise:areas.frontend.description'),
-      skills: t('expertise:areas.frontend.skills', { returnObjects: true }),
+      skills: t('expertise:areas.frontend.skills', { returnObjects: true }) as string[],
     },
     {
       icon: Database,
       title: t('expertise:areas.backend.title'),
       description: t('expertise:areas.backend.description'),
-      skills: t('expertise:areas.backend.skills', { returnObjects: true }),
+      skills: t('expertise:areas.backend.skills', { returnObjects: true }) as string[],
     },
     {
       icon: Layers,
-      title: t('expertise:areas.systemDesign.title'),
-      description: t('expertise:areas.systemDesign.description'),
-      skills: t('expertise:areas.systemDesign.skills', { returnObjects: true }),
+      title: t('expertise:areas.devops.title'),
+      description: t('expertise:areas.devops.description'),
+      skills: t('expertise:areas.devops.skills', { returnObjects: true }) as string[],
     },
     {
       icon: Globe,
       title: t('expertise:areas.api.title'),
       description: t('expertise:areas.api.description'),
-      skills: t('expertise:areas.api.skills', { returnObjects: true }),
+      skills: t('expertise:areas.api.skills', { returnObjects: true }) as string[],
     },
   ];
 
@@ -100,10 +94,6 @@ const ExpertiseCard: React.FC<ExpertiseItem> = ({
     </div>
   </div>
 );
-
-interface SkillTagsProps {
-  skills: string[];
-}
 
 const SkillTags: React.FC<SkillTagsProps> = ({ skills }) => (
   <div className="flex flex-wrap gap-2">

@@ -5,22 +5,22 @@
     "frontend": {
       "title": "Frontend Development",
       "description": "Creating responsive and intuitive user interfaces with modern frameworks and best practices.",
-      "skills": ["React", "TypeScript", "Next.js"]
+      "skills": ["React", "TypeScript", "Vite", "Angular", "Material UI", "Tailwind"]
     },
     "backend": {
       "title": "Backend Architecture",
       "description": "Building scalable and secure server-side solutions with cloud-native technologies.",
-      "skills": ["Node.js", "Python", "AWS"]
+      "skills": ["Javascript","Node.js", "Python", "Go", "Dynamo", "PostgreSQL"]
     },
-    "systemDesign": {
-      "title": "System Design",
-      "description": "Designing robust and scalable architectures for complex applications.",
-      "skills": ["Microservices", "Docker", "Kubernetes"]
+    "devops": {
+      "title": "DevOps & Cloud",
+      "description": "Ensuring high availability, automation, and scalability of applications.",
+      "skills": ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "GCP"]
     },
     "api": {
       "title": "API Development",
       "description": "Creating efficient and well-documented APIs for seamless integration.",
-      "skills": ["REST", "GraphQL", "OpenAPI"]
+      "skills": ["REST", "GraphQL", "OpenAPI", "Django"]
     }
   }
 }

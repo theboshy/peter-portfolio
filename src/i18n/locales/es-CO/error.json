@@ -1,0 +1,15 @@
+{
+  "title": "Error Inesperado",
+  "message": "Houston, hemos encontrado un problema inesperado. Nuestro equipo ha sido notificado y está trabajando en una solución.",
+  "backButton": "Volver al Control de Misión",
+  "search": {
+    "placeholder": "Buscar contenido...",
+    "button": "Buscar"
+  },
+  "suggestedLinks": {
+    "title": "Enlaces Rápidos",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "expertise": "Experiencia"
+  }
+}

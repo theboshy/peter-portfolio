@@ -13,8 +13,6 @@ export const useConsole = () => {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const consoleRef = useRef<HTMLDivElement>(null);
   const historyRef = useRef<HTMLDivElement>(null);
-  useRef(0);
-  useRef(0);
   const scrollTimeoutRef = useRef<number>();
 
   const scrollToBottom = useCallback((smooth = true) => {

@@ -1,0 +1,15 @@
+{
+  "title": "Unexpected Error",
+  "message": "Houston, we've encountered an unexpected problem. Our team has been notified and is working on a solution.",
+  "backButton": "Back to Mission Control",
+  "search": {
+    "placeholder": "Search for content...",
+    "button": "Search"
+  },
+  "suggestedLinks": {
+    "title": "Quick Links",
+    "projects": "Projects",
+    "contact": "Contact",
+    "expertise": "Expertise"
+  }
+}

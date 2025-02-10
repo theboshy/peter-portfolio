@@ -1,7 +1,6 @@
 import React from 'react';
 import { Mail, Github, Linkedin, ArrowRight, Rocket, Radio } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { useForm } from '#components/ContactSection/useForm.ts';
 import { SocialLink } from '#types/common.ts';
 import {
   sectionStyles,
@@ -10,6 +9,7 @@ import {
   socialLinkStyles,
   submitButtonStyles
 } from './ContactSection.styles';
+import {useForm} from "#components/ContactSection/useForm.ts";
 
 const ContactSection: React.FC = () => {
   const {
@@ -79,7 +79,7 @@ const ContactInfo: React.FC = () => {
               className={socialLinkStyles()}
               aria-label={link.label}
             >
-              <link.icon size={20}/>
+              <link.icon size={20} className="group-hover:animate-pulse" />
             </a>
           ))}
         </div>

@@ -1,4 +1,4 @@
-import {Locator, type Page} from '@playwright/test';
+import { type Page } from '@playwright/test';
 import { BasePage } from '../base.page';
 import { NavigationComponent } from '../components/navigation.component';
 import { ContactFormComponent } from '../components/contact-form.component';
@@ -28,7 +28,7 @@ export class HomePage extends BasePage {
     return this.isInViewport(section);
   }
 
-  async verifyResponsiveLayout(viewport: { width: number; height: number }) {
+  async verifyResponsiveLayout(viewport: unknown) {
     await this.page.setViewportSize(viewport);
     return {
       isNavigationVisible: await this.navigation.navLinks.isVisible(),
