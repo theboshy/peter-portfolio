@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "#components/*": ["src/components/*"],
+      "#hooks/*": ["src/hooks/*"],
+      "#types/*": ["src/types/*"],
+      "#styles/*": ["src/styles/*"],
+      "#utils/*": ["src/utils/*"],
+      "#pom/*": ["tests/e2e/pom/*"],
+      "#fixtures/*": ["tests/e2e/fixtures/*"]
+    }
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

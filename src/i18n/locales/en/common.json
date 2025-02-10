@@ -1,0 +1,21 @@
+{
+  "navigation": {
+    "expertise": "Expertise",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "theme": {
+    "toggle": "Toggle theme"
+  },
+  "language": {
+    "select": "Select language",
+    "en": "English",
+    "es-CO": "Español (CO)"
+  },
+  "console": {
+    "toggle": "Toggle console",
+    "minimize": "Minimize console",
+    "expand": "Expand console",
+    "placeholder": "Type a command..."
+  }
+}

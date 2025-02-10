@@ -1,0 +1,53 @@
+{
+  "title": "Professional Journey Through Time",
+  "subtitle": "A chronicle of achievements, milestones, and continuous growth",
+  "types": {
+    "achievement": "Achievement",
+    "education": "Education",
+    "career": "Career",
+    "project": "Project",
+    "award": "Award"
+  },
+  "entries": {
+    "award2025": {
+      "date": "Jan 2025",
+      "title": "Tech Leadership Award",
+      "description": "Recognized for outstanding technical leadership and team mentorship.",
+      "achievements": [
+        "Led a team of 12 developers across 3 major projects",
+        "Implemented innovative CI/CD practices",
+        "Reduced deployment time by 60%"
+      ]
+    },
+    "project2024Sep": {
+      "date": "Sep 2024",
+      "title": "AI-Powered Analytics Platform",
+      "description": "Architected and launched a revolutionary analytics platform using cutting-edge AI.",
+      "achievements": [
+        "Processed over 1M data points daily",
+        "Achieved 99.9% uptime",
+        "Integrated advanced machine learning models"
+      ]
+    },
+    "career2024Jun": {
+      "date": "Jun 2024",
+      "title": "Senior Technical Lead",
+      "description": "Promoted to lead technical initiatives and mentor junior developers.",
+      "achievements": [
+        "Oversee architecture decisions",
+        "Establish technical standards",
+        "Drive innovation initiatives"
+      ]
+    },
+    "education2024Mar": {
+      "date": "Mar 2024",
+      "title": "Cloud Architecture Certification",
+      "description": "Advanced certification in cloud architecture and distributed systems.",
+      "achievements": [
+        "Mastered cloud-native patterns",
+        "Specialized in serverless architecture",
+        "Studied advanced security protocols"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Mission Specialist",
+  "subtitle": "Exploring the Digital Frontier",
+  "missionOverview": {
+    "title": "Mission Overview",
+    "description": "Senior Software Engineer with a passion for space exploration and cutting-edge technology. Specializing in building robust, scalable applications that push the boundaries of what's possible."
+  },
+  "expertise": {
+    "technicalVision": {
+      "title": "Technical Vision",
+      "description": "Architecting next-generation solutions with a focus on scalability and innovation."
+    },
+    "missionControl": {
+      "title": "Mission Control",
+      "description": "Leading development teams and managing complex project lifecycles."
+    }
+  }
+}

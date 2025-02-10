@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --space-black: #0D1117;
+    --neon-green: #238636;
+    --tech-gray: #30363D;
+    --digital-white: #F6F8FA;
+  }
+
+  body {
+    @apply bg-[#0D1117] text-[#F6F8FA] font-inter antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .scroll-mt-20 {
+    scroll-margin-top: 5rem;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .pulse-once {
+    animation: pulseOnce 1s cubic-bezier(0.4, 0, 0.6, 1);
+  }
+}
+
+/* Spotlight Effect */
+.spotlight-active {
+  opacity: 1 !important;
+}
+
+/* Console Active State */
+.console-active main,
+.console-active header,
+.console-active footer {
+  transition: filter 0.3s ease-out, transform 0.3s ease-out;
+  filter: blur(5px) brightness(0.7);
+  transform: scale(0.99);
+}
+
+/* Particle Animation */
+@keyframes fadeOut {
+  0% { 
+    opacity: 1; 
+    transform: scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0); 
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    filter: brightness(100%); 
+  }
+  50% { 
+    filter: brightness(150%); 
+  }
+}
+
+@keyframes pulseOnce {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}

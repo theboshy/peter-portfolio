@@ -1,0 +1,53 @@
+{
+  "title": "Trayectoria Profesional a Través del Tiempo",
+  "subtitle": "Una crónica de logros, hitos y crecimiento continuo",
+  "types": {
+    "achievement": "Logro",
+    "education": "Educación",
+    "career": "Carrera",
+    "project": "Proyecto",
+    "award": "Premio"
+  },
+  "entries": {
+    "award2025": {
+      "date": "Ene 2025",
+      "title": "Premio al Liderazgo Técnico",
+      "description": "Reconocido por excelente liderazgo técnico y mentoría de equipo.",
+      "achievements": [
+        "Lideré un equipo de 12 desarrolladores en 3 proyectos principales",
+        "Implementé prácticas innovadoras de CI/CD",
+        "Reduje el tiempo de despliegue en un 60%"
+      ]
+    },
+    "project2024Sep": {
+      "date": "Sep 2024",
+      "title": "Plataforma de Análisis con IA",
+      "description": "Arquitectura y lanzamiento de una plataforma revolucionaria de análisis usando IA de vanguardia.",
+      "achievements": [
+        "Procesamiento de más de 1M de datos diarios",
+        "Logro de 99.9% de disponibilidad",
+        "Integración de modelos avanzados de machine learning"
+      ]
+    },
+    "career2024Jun": {
+      "date": "Jun 2024",
+      "title": "Líder Técnico Senior",
+      "description": "Promoción para liderar iniciativas técnicas y mentorear desarrolladores junior.",
+      "achievements": [
+        "Supervisión de decisiones de arquitectura",
+        "Establecimiento de estándares técnicos",
+        "Impulso de iniciativas de innovación"
+      ]
+    },
+    "education2024Mar": {
+      "date": "Mar 2024",
+      "title": "Certificación en Arquitectura Cloud",
+      "description": "Certificación avanzada en arquitectura cloud y sistemas distribuidos.",
+      "achievements": [
+        "Dominio de patrones cloud-native",
+        "Especialización en arquitectura serverless",
+        "Estudio de protocolos avanzados de seguridad"
+      ]
+    }
+  }
+}

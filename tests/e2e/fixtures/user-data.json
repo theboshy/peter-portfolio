@@ -1,0 +1,12 @@
+{
+  "validUser": {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "message": "Hello, I'm interested in discussing a potential project."
+  },
+  "invalidUser": {
+    "name": "",
+    "email": "invalid-email",
+    "message": ""
+  }
+}

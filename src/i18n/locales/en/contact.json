@@ -1,0 +1,28 @@
+{
+  "title": "Mission Control",
+  "subtitle": "Ready to launch your next project? Let's connect and explore the possibilities together.",
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Your name",
+      "error": "Name is required"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "your@email.com",
+      "error": "Please enter a valid email"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Tell me about your project",
+      "error": "Message is required"
+    },
+    "submit": {
+      "sending": "Sending...",
+      "default": "Launch Message"
+    }
+  },
+  "contact": {
+    "email": "contact@example.com"
+  }
+}

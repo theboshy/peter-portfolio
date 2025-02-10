@@ -1,0 +1,26 @@
+{
+  "title": "Experiencia Técnica",
+  "subtitle": "Aprovechando tecnologías de vanguardia para construir soluciones potentes",
+  "areas": {
+    "frontend": {
+      "title": "Desarrollo Frontend",
+      "description": "Creación de interfaces de usuario responsivas e intuitivas con frameworks modernos y mejores prácticas.",
+      "skills": ["React", "TypeScript", "Next.js"]
+    },
+    "backend": {
+      "title": "Arquitectura Backend",
+      "description": "Construcción de soluciones escalables y seguras del lado del servidor con tecnologías cloud-native.",
+      "skills": ["Node.js", "Python", "AWS"]
+    },
+    "systemDesign": {
+      "title": "Diseño de Sistemas",
+      "description": "Diseño de arquitecturas robustas y escalables para aplicaciones complejas.",
+      "skills": ["Microservices", "Docker", "Kubernetes"]
+    },
+    "api": {
+      "title": "Desarrollo de APIs",
+      "description": "Creación de APIs eficientes y bien documentadas para una integración perfecta.",
+      "skills": ["REST", "GraphQL", "OpenAPI"]
+    }
+  }
+}

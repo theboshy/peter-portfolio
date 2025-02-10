@@ -1,0 +1,18 @@
+{
+  "title": "Especialista en Misiones",
+  "subtitle": "Explorando la Frontera Digital",
+  "missionOverview": {
+    "title": "Descripción de la Misión",
+    "description": "Ingeniero de Software Senior con pasión por la exploración espacial y la tecnología de vanguardia. Especializado en construir aplicaciones robustas y escalables que superan los límites de lo posible."
+  },
+  "expertise": {
+    "technicalVision": {
+      "title": "Visión Técnica",
+      "description": "Arquitectura de soluciones de próxima generación con enfoque en escalabilidad e innovación."
+    },
+    "missionControl": {
+      "title": "Control de Misión",
+      "description": "Liderando equipos de desarrollo y gestionando ciclos de vida de proyectos complejos."
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "title": "Control de Misión",
+  "subtitle": "¿Listo para lanzar tu próximo proyecto? Conectemos y exploremos las posibilidades juntos.",
+  "form": {
+    "name": {
+      "label": "Nombre",
+      "placeholder": "Tu nombre",
+      "error": "El nombre es requerido"
+    },
+    "email": {
+      "label": "Correo",
+      "placeholder": "tu@correo.com",
+      "error": "Por favor ingresa un correo válido"
+    },
+    "message": {
+      "label": "Mensaje",
+      "placeholder": "Cuéntame sobre tu proyecto",
+      "error": "El mensaje es requerido"
+    },
+    "submit": {
+      "sending": "Enviando...",
+      "default": "Enviar Mensaje"
+    }
+  },
+  "contact": {
+    "email": "contact@example.com"
+  }
+}

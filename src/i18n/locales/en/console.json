@@ -1,0 +1,13 @@
+{
+  "title": "Source Code Console",
+  "welcome": "Welcome to the Source Code Console!",
+  "availableCommands": "Available commands:",
+  "commands": {
+    "showSource": "show source - Display the source code repository"
+  },
+  "responses": {
+    "sourceRepo": "Source code repository:",
+    "commandNotFound": "Command not found: {{command}}",
+    "placeholder": "Type a command..."
+  }
+}

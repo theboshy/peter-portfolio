@@ -1,0 +1,25 @@
+{
+  "title": "Featured Projects",
+  "subtitle": "Showcasing innovative solutions and technical excellence",
+  "projects": {
+    "ecommerce": {
+      "title": "E-Commerce Platform",
+      "description": "A modern e-commerce solution with real-time inventory management and AI-powered recommendations.",
+      "tech": ["React", "Node.js", "PostgreSQL"]
+    },
+    "aiContent": {
+      "title": "AI Content Platform",
+      "description": "Content generation platform leveraging OpenAI GPT models with advanced prompt engineering.",
+      "tech": ["Next.js", "Python", "TensorFlow"]
+    },
+    "financial": {
+      "title": "Financial Dashboard",
+      "description": "Real-time financial analytics dashboard with predictive modeling and data visualization.",
+      "tech": ["Vue.js", "FastAPI", "MongoDB"]
+    }
+  },
+  "links": {
+    "liveDemo": "Live Demo",
+    "sourceCode": "Source Code"
+  }
+}

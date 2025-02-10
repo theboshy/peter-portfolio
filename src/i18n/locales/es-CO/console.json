@@ -1,0 +1,13 @@
+{
+  "title": "Consola de Código Fuente",
+  "welcome": "¡Bienvenido a la Consola de Código Fuente!",
+  "availableCommands": "Comandos disponibles:",
+  "commands": {
+    "showSource": "show source - Mostrar el repositorio del código fuente"
+  },
+  "responses": {
+    "sourceRepo": "Repositorio del código fuente:",
+    "commandNotFound": "Comando no encontrado: {{command}}",
+    "placeholder": "Escribe un comando..."
+  }
+}
