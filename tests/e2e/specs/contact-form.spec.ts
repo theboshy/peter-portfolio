@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pom/pages/home.page';
-import userData from '../fixtures/user-data.json';
+import {userData} from "../fixtures/user-data";
 
 test.describe('Contact Form', () => {
   let homePage: HomePage;

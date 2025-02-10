@@ -1,4 +1,4 @@
-{
+export const userData = {
   "validUser": {
     "name": "John Doe",
     "email": "john.doe@example.com",
