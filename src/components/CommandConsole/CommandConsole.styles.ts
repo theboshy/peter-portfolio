@@ -2,7 +2,7 @@ import { tv } from "tailwind-variants";
 
 export const consoleStyles = tv({
   base: [
-    "fixed z-2 bg-space-black/95 backdrop-blur-md border border-tech-gray/30 shadow-2xl transition-all duration-300",
+    "fixed z-10 bg-space-black/95 backdrop-blur-md border border-tech-gray/30 shadow-2xl transition-all duration-300",
     "md:bottom-20 md:right-4 md:w-96",
   ],
   variants: {
