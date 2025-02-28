@@ -4,9 +4,15 @@ import "./i18n/config";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router.tsx";
+import ErrorBoundaryProvider from "./providers/ErrorBoundaryProvider";
+import { initSentry } from "../sentry.io";
+
+initSentry();
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ErrorBoundaryProvider>
+      <RouterProvider router={router} />
+    </ErrorBoundaryProvider>
   </React.StrictMode>,
 );

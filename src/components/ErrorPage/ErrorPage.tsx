@@ -29,12 +29,6 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetError }) => {
     navigate("/");
   };
 
-  const suggestedLinks = [
-    { label: t("error:suggestedLinks.projects"), path: "#projects" },
-    { label: t("error:suggestedLinks.contact"), path: "#contact" },
-    { label: t("error:suggestedLinks.expertise"), path: "#expertise" },
-  ];
-
   return (
     <div className={containerStyles()}>
       <div className={languageSelectorStyles()}>
@@ -72,22 +66,6 @@ const ErrorPage: React.FC<ErrorPageProps> = ({ error, resetError }) => {
           <Home className="w-5 h-5" />
           {t("error:backButton")}
         </button>
-
-        <div className={suggestedLinksStyles()}>
-          {suggestedLinks.map((link, index) => (
-            <a
-              key={index}
-              href={link.path}
-              className={linkStyles()}
-              onClick={(e) => {
-                e.preventDefault();
-                navigate(link.path);
-              }}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
       </div>
     </div>
   );
