@@ -1,12 +1,12 @@
 export const userData = {
-  "validUser": {
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "message": "Hello, I'm interested in discussing a potential project."
+  validUser: {
+    name: "John Doe",
+    email: "john.doe@example.com",
+    message: "Hello, I'm interested in discussing a potential project.",
   },
-  "invalidUser": {
-    "name": "",
-    "email": "invalid-email",
-    "message": ""
-  }
-}
+  invalidUser: {
+    name: "",
+    email: "invalid-email",
+    message: "",
+  },
+};

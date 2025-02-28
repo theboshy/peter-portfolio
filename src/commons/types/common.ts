@@ -1,5 +1,5 @@
 import React from "react";
-import {LucideIcon} from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 export interface ThemeProps {
   isDark: boolean;
@@ -27,7 +27,12 @@ export interface TimelineEntry {
   achievements: string[];
 }
 
-export type TimelineEntryType = 'achievement' | 'education' | 'career' | 'project' | 'award';
+export type TimelineEntryType =
+  | "achievement"
+  | "education"
+  | "career"
+  | "project"
+  | "award";
 
 export interface NavLink {
   href: string;
@@ -98,7 +103,7 @@ export interface EventHandlerProps {
 
 export interface BaseComponentProps extends StyleProps, EventHandlerProps {
   id?: string;
-  'aria-label'?: string;
+  "aria-label"?: string;
   role?: string;
   tabIndex?: number;
 }

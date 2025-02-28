@@ -20,7 +20,7 @@
       "#components/*": ["./src/components/*"],
       "#providers/*": ["./src/providers/*"],
       "#hooks/*": ["./src/hooks/*"],
-      "#types/*": ["./src/types/*"],
+      "#commons/*": ["./src/commons/*"],
       "#styles/*": ["./src/styles/*"],
       "#utils/*": ["./src/utils/*"]
     }

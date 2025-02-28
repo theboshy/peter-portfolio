@@ -1,44 +1,53 @@
-import React from 'react';
-import { ExternalLink, Github } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { Project } from '#types/common.ts';
+import React from "react";
+import { ExternalLink, Github } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { Project } from "../../commons/types/common.ts";
 import {
   sectionStyles,
   headerStyles,
   projectCardStyles,
   imageContainerStyles,
   imageStyles,
-  linkStyles
-} from './ProjectsSection.styles';
+  linkStyles,
+} from "./ProjectsSection.styles";
 
 const ProjectsSection: React.FC = () => {
   const { t } = useTranslation();
 
   const projects: Project[] = [
     {
-      title: t('projects:projects.ecommerce.title'),
-      description: t('projects:projects.ecommerce.description'),
-      image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800&q=80',
-      tech: t('projects:projects.ecommerce.tech', { returnObjects: true }) as string[],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: t("projects:projects.ecommerce.title"),
+      description: t("projects:projects.ecommerce.description"),
+      image:
+        "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800&q=80",
+      tech: t("projects:projects.ecommerce.tech", {
+        returnObjects: true,
+      }) as string[],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
-      title: t('projects:projects.aiContent.title'),
-      description: t('projects:projects.aiContent.description'),
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80',
-      tech: t('projects:projects.aiContent.tech', { returnObjects: true }) as string[],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: t("projects:projects.aiContent.title"),
+      description: t("projects:projects.aiContent.description"),
+      image:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
+      tech: t("projects:projects.aiContent.tech", {
+        returnObjects: true,
+      }) as string[],
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
-      title: t('projects:projects.financial.title'),
-      description: t('projects:projects.financial.description'),
-      image: 'https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=800&q=80',
-      tech: t('projects:projects.financial.tech', { returnObjects: true }) as string[],
-      liveUrl: '#',
-      githubUrl: '#',
-    }
+      title: t("projects:projects.financial.title"),
+      description: t("projects:projects.financial.description"),
+      image:
+        "https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=800&q=80",
+      tech: t("projects:projects.financial.tech", {
+        returnObjects: true,
+      }) as string[],
+      liveUrl: "#",
+      githubUrl: "#",
+    },
   ];
 
   return (
@@ -53,13 +62,11 @@ const ProjectsSection: React.FC = () => {
 
 const SectionHeader: React.FC = () => {
   const { t } = useTranslation();
-  
+
   return (
     <div className={headerStyles()}>
-      <h2 className="text-4xl font-bold mb-6">{t('projects:title')}</h2>
-      <p className="text-xl text-gray-400">
-        {t('projects:subtitle')}
-      </p>
+      <h2 className="text-4xl font-bold mb-6">{t("projects:title")}</h2>
+      <p className="text-xl text-gray-400">{t("projects:subtitle")}</p>
     </div>
   );
 };
@@ -94,11 +101,7 @@ interface ProjectImageProps {
 
 const ProjectImage: React.FC<ProjectImageProps> = ({ image, title }) => (
   <div className={imageContainerStyles()}>
-    <img
-      src={image}
-      alt={title}
-      className={imageStyles()}
-    />
+    <img src={image} alt={title} className={imageStyles()} />
     <div className="absolute inset-0 bg-gradient-to-t from-space-black to-transparent opacity-60" />
   </div>
 );
@@ -136,24 +139,24 @@ interface ProjectLinksProps {
 
 const ProjectLinks: React.FC<ProjectLinksProps> = ({ liveUrl, githubUrl }) => {
   const { t } = useTranslation();
-  
+
   return (
     <div className="flex items-center gap-4">
-      <a 
-        href={liveUrl} 
+      <a
+        href={liveUrl}
         className={linkStyles()}
-        aria-label={t('projects:links.liveDemo')}
+        aria-label={t("projects:links.liveDemo")}
       >
         <ExternalLink size={16} className="mr-1" />
-        {t('projects:links.liveDemo')}
+        {t("projects:links.liveDemo")}
       </a>
-      <a 
-        href={githubUrl} 
+      <a
+        href={githubUrl}
         className={linkStyles()}
-        aria-label={t('projects:links.sourceCode')}
+        aria-label={t("projects:links.sourceCode")}
       >
         <Github size={16} className="mr-1" />
-        {t('projects:links.sourceCode')}
+        {t("projects:links.sourceCode")}
       </a>
     </div>
   );

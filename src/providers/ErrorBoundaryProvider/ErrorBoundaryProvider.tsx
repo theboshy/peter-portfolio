@@ -1,5 +1,5 @@
-import { Component, ErrorInfo, ReactNode, createContext } from 'react';
-import * as Sentry from '@sentry/react';
+import { Component, ErrorInfo, ReactNode, createContext } from "react";
+import * as Sentry from "@sentry/react";
 import ErrorPage from "#components/ErrorPage";
 
 interface ErrorContextType {
@@ -33,18 +33,16 @@ class ErrorBoundaryProvider extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('Uncaught error:', error, errorInfo);
+    console.error("Uncaught error:", error, errorInfo);
     Sentry.captureException(error);
   }
 
   public render() {
     if (this.state.hasError) {
       return (
-          <ErrorContext.Provider value={{ error: this.state.error || null }}>
-            {this.props.fallback || (
-              <ErrorPage />
-            )}
-          </ErrorContext.Provider>
+        <ErrorContext.Provider value={{ error: this.state.error || null }}>
+          {this.props.fallback || <ErrorPage />}
+        </ErrorContext.Provider>
       );
     }
     return this.props.children;

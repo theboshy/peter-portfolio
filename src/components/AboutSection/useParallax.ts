@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect } from "react";
 
 export const useParallax = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
@@ -10,8 +10,8 @@ export const useParallax = () => {
       parallaxRef.current.style.transform = `translateY(${scrolled * 0.5}px)`;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return { parallaxRef };

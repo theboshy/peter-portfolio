@@ -1,9 +1,9 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
-import en from './locales/en';
-import esCO from './locales/es-CO';
+import en from "./locales/en";
+import esCO from "./locales/es-CO";
 
 i18n
   .use(LanguageDetector)
@@ -11,13 +11,13 @@ i18n
   .init({
     resources: {
       en,
-      'es-CO': esCO
+      "es-CO": esCO,
     },
-    fallbackLng: 'en',
-    defaultNS: 'common',
+    fallbackLng: "en",
+    defaultNS: "common",
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
   });
 
 export default i18n;

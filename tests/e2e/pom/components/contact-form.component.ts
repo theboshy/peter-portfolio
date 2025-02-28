@@ -1,4 +1,4 @@
-import { type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
 
 export class ContactFormComponent {
   readonly form: Locator;
@@ -9,12 +9,14 @@ export class ContactFormComponent {
   readonly errorMessages: Locator;
 
   constructor(page: Page) {
-    this.form = page.locator('#contact-section form');
+    this.form = page.locator("#contact-section form");
     this.nameInput = this.form.getByLabel(/name/i);
     this.emailInput = this.form.getByLabel(/email/i);
     this.messageInput = this.form.getByLabel(/message/i);
-    this.submitButton = this.form.getByRole('button', { name: /launch message/i });
-    this.errorMessages = this.form.locator('.text-red-500');
+    this.submitButton = this.form.getByRole("button", {
+      name: /launch message/i,
+    });
+    this.errorMessages = this.form.locator(".text-red-500");
   }
 
   async fill(data: { name: string; email: string; message: string }) {
@@ -29,7 +31,7 @@ export class ContactFormComponent {
 
   async getErrors() {
     const errors = await this.errorMessages.all();
-    return Promise.all(errors.map(error => error.textContent()));
+    return Promise.all(errors.map((error) => error.textContent()));
   }
 
   async isSubmitting() {

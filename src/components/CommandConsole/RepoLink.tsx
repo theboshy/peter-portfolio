@@ -1,5 +1,5 @@
-import React from 'react';
-import { Github } from 'lucide-react';
+import React from "react";
+import { Github } from "lucide-react";
 
 const RepoLink: React.FC = () => (
   <div className="flex items-center gap-2 text-neon-green hover:underline cursor-pointer">

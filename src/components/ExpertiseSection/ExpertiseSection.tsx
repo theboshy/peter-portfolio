@@ -1,14 +1,14 @@
-import React from 'react';
-import { Code2, Database, Layers, Globe } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { Code2, Database, Layers, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import {
   sectionStyles,
   headerStyles,
   cardStyles,
   iconContainerStyles,
-  skillTagStyles
-} from './ExpertiseSection.styles';
-import {ExpertiseItem, SkillTagsProps} from "#types/common.ts";
+  skillTagStyles,
+} from "./ExpertiseSection.styles";
+import { ExpertiseItem, SkillTagsProps } from "../../commons/types/common.ts";
 
 const ExpertiseSection: React.FC = () => {
   const { t } = useTranslation();
@@ -16,27 +16,35 @@ const ExpertiseSection: React.FC = () => {
   const expertiseItems: ExpertiseItem[] = [
     {
       icon: Code2,
-      title: t('expertise:areas.frontend.title'),
-      description: t('expertise:areas.frontend.description'),
-      skills: t('expertise:areas.frontend.skills', { returnObjects: true }) as string[],
+      title: t("expertise:areas.frontend.title"),
+      description: t("expertise:areas.frontend.description"),
+      skills: t("expertise:areas.frontend.skills", {
+        returnObjects: true,
+      }) as string[],
     },
     {
       icon: Database,
-      title: t('expertise:areas.backend.title'),
-      description: t('expertise:areas.backend.description'),
-      skills: t('expertise:areas.backend.skills', { returnObjects: true }) as string[],
+      title: t("expertise:areas.backend.title"),
+      description: t("expertise:areas.backend.description"),
+      skills: t("expertise:areas.backend.skills", {
+        returnObjects: true,
+      }) as string[],
     },
     {
       icon: Layers,
-      title: t('expertise:areas.devops.title'),
-      description: t('expertise:areas.devops.description'),
-      skills: t('expertise:areas.devops.skills', { returnObjects: true }) as string[],
+      title: t("expertise:areas.devops.title"),
+      description: t("expertise:areas.devops.description"),
+      skills: t("expertise:areas.devops.skills", {
+        returnObjects: true,
+      }) as string[],
     },
     {
       icon: Globe,
-      title: t('expertise:areas.api.title'),
-      description: t('expertise:areas.api.description'),
-      skills: t('expertise:areas.api.skills', { returnObjects: true }) as string[],
+      title: t("expertise:areas.api.title"),
+      description: t("expertise:areas.api.description"),
+      skills: t("expertise:areas.api.skills", {
+        returnObjects: true,
+      }) as string[],
     },
   ];
 
@@ -52,13 +60,11 @@ const ExpertiseSection: React.FC = () => {
 
 const SectionHeader: React.FC = () => {
   const { t } = useTranslation();
-  
+
   return (
     <div className={headerStyles()}>
-      <h2 className="text-4xl font-bold mb-6">{t('expertise:title')}</h2>
-      <p className="text-xl text-gray-400">
-        {t('expertise:subtitle')}
-      </p>
+      <h2 className="text-4xl font-bold mb-6">{t("expertise:title")}</h2>
+      <p className="text-xl text-gray-400">{t("expertise:subtitle")}</p>
     </div>
   );
 };
@@ -79,7 +85,7 @@ const ExpertiseCard: React.FC<ExpertiseItem> = ({
   icon: Icon,
   title,
   description,
-  skills
+  skills,
 }) => (
   <div className={cardStyles()}>
     <div className="flex items-start gap-6">

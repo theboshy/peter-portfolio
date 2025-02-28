@@ -1,11 +1,11 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
-import { createElement } from 'react';
-import RepoLink from './RepoLink';
+import { useState, useRef, useCallback, useEffect } from "react";
+import { createElement } from "react";
+import RepoLink from "./RepoLink";
 
 export const useConsole = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [history, setHistory] = useState<Array<string | React.ReactNode>>([]);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
@@ -20,31 +20,37 @@ export const useConsole = () => {
 
     const scrollOptions: ScrollToOptions = {
       top: historyRef.current.scrollHeight,
-      behavior: smooth ? 'smooth' : 'auto'
+      behavior: smooth ? "smooth" : "auto",
     };
 
     historyRef.current.scrollTo(scrollOptions);
   }, []);
 
-  const addToHistory = useCallback((message: string | React.ReactNode) => {
-    setHistory(prev => [...prev, message]);
-    
-    requestAnimationFrame(() => {
-      scrollToBottom();
-    });
-  }, [scrollToBottom]);
+  const addToHistory = useCallback(
+    (message: string | React.ReactNode) => {
+      setHistory((prev) => [...prev, message]);
 
-  const handleCommand = useCallback((cmd: string) => {
-    if (cmd.toLowerCase().trim() === 'show source') {
-      addToHistory('Source code repository:');
-      addToHistory(createElement(RepoLink));
-    } else {
-      addToHistory(`Command not found: ${cmd}`);
-      addToHistory('Available commands:');
-      addToHistory('  show source - Display the source code repository');
-    }
-    setInput('');
-  }, [addToHistory]);
+      requestAnimationFrame(() => {
+        scrollToBottom();
+      });
+    },
+    [scrollToBottom],
+  );
+
+  const handleCommand = useCallback(
+    (cmd: string) => {
+      if (cmd.toLowerCase().trim() === "show source") {
+        addToHistory("Source code repository:");
+        addToHistory(createElement(RepoLink));
+      } else {
+        addToHistory(`Command not found: ${cmd}`);
+        addToHistory("Available commands:");
+        addToHistory("  show source - Display the source code repository");
+      }
+      setInput("");
+    },
+    [addToHistory],
+  );
 
   const handleScroll = useCallback(() => {
     if (!historyRef.current) return;
@@ -68,39 +74,48 @@ export const useConsole = () => {
   }, [scrollToBottom]);
 
   const handleMinimize = useCallback((e: React.MouseEvent) => {
-    e.stopPropagation(); 
+    e.stopPropagation();
     setIsExpanded(false);
     setIsActive(false);
     if (inputRef.current) {
-      inputRef.current.blur(); 
+      inputRef.current.blur();
     }
   }, []);
 
-  const handleConsoleClick = useCallback((e: React.MouseEvent) => {
-    e.preventDefault(); 
-    setIsActive(true);
-    if (isExpanded && inputRef.current) {
-      inputRef.current.focus();
-    }
-  }, [isExpanded]);
+  const handleConsoleClick = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      setIsActive(true);
+      if (isExpanded && inputRef.current) {
+        inputRef.current.focus();
+      }
+    },
+    [isExpanded],
+  );
 
   const handleToggleConsole = useCallback((e: React.MouseEvent) => {
-    e.stopPropagation(); 
-    setIsExpanded(prev => !prev);
+    e.stopPropagation();
+    setIsExpanded((prev) => !prev);
     setIsActive(true);
   }, []);
 
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setInput(e.target.value);
-  }, []);
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setInput(e.target.value);
+    },
+    [],
+  );
 
-  const handleKeyPress = useCallback((e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey && input.trim()) {
-      e.preventDefault();
-      addToHistory(`> ${input}`);
-      handleCommand(input);
-    }
-  }, [input, handleCommand, addToHistory]);
+  const handleKeyPress = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === "Enter" && !e.shiftKey && input.trim()) {
+        e.preventDefault();
+        addToHistory(`> ${input}`);
+        handleCommand(input);
+      }
+    },
+    [input, handleCommand, addToHistory],
+  );
 
   useEffect(() => {
     const checkMobile = () => {
@@ -108,19 +123,19 @@ export const useConsole = () => {
       setIsMobile(isMobileView);
       setIsExpanded(!isMobileView);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
     if (historyRef.current) {
-      historyRef.current.addEventListener('scroll', handleScroll);
+      historyRef.current.addEventListener("scroll", handleScroll);
       return () => {
         if (historyRef.current) {
           // eslint-disable-next-line react-hooks/exhaustive-deps
-          historyRef.current.removeEventListener('scroll', handleScroll);
+          historyRef.current.removeEventListener("scroll", handleScroll);
         }
       };
     }
@@ -128,10 +143,10 @@ export const useConsole = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      addToHistory('Welcome to the Source Code Console!');
-      addToHistory('');
-      addToHistory('Available commands:');
-      addToHistory('  show source - Display the source code repository');
+      addToHistory("Welcome to the Source Code Console!");
+      addToHistory("");
+      addToHistory("Available commands:");
+      addToHistory("  show source - Display the source code repository");
     }, 500);
   }, [addToHistory]);
 
@@ -143,24 +158,27 @@ export const useConsole = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (consoleRef.current && !consoleRef.current.contains(event.target as Node)) {
+      if (
+        consoleRef.current &&
+        !consoleRef.current.contains(event.target as Node)
+      ) {
         setIsActive(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
     if (isActive && isExpanded) {
-      document.body.classList.add('console-active');
+      document.body.classList.add("console-active");
     } else {
-      document.body.classList.remove('console-active');
+      document.body.classList.remove("console-active");
     }
 
     return () => {
-      document.body.classList.remove('console-active');
+      document.body.classList.remove("console-active");
     };
   }, [isActive, isExpanded]);
 
@@ -179,6 +197,6 @@ export const useConsole = () => {
     handleToggleConsole,
     handleInputChange,
     handleKeyPress,
-    scrollToBottom
+    scrollToBottom,
   };
 };

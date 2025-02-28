@@ -1,7 +1,13 @@
-import React, { useEffect } from 'react';
-import { Terminal, Minimize2, Code2, ChevronUp, ChevronDown } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { useConsole } from './useConsole';
+import React, { useEffect } from "react";
+import {
+  Terminal,
+  Minimize2,
+  Code2,
+  ChevronUp,
+  ChevronDown,
+} from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { useConsole } from "./useConsole";
 import {
   consoleStyles,
   headerStyles,
@@ -9,8 +15,8 @@ import {
   historyContainerStyles,
   inputContainerStyles,
   inputStyles,
-  toggleButtonStyles
-} from './CommandConsole.styles';
+  toggleButtonStyles,
+} from "./CommandConsole.styles";
 
 const CommandConsole: React.FC = () => {
   const { t } = useTranslation();
@@ -29,7 +35,7 @@ const CommandConsole: React.FC = () => {
     handleToggleConsole,
     handleInputChange,
     handleKeyPress,
-    scrollToBottom
+    scrollToBottom,
   } = useConsole();
 
   useEffect(() => {
@@ -46,7 +52,7 @@ const CommandConsole: React.FC = () => {
         className={consoleStyles({ isExpanded, isActive, isMobile })}
         data-expanded={isExpanded}
       >
-        <div 
+        <div
           className={headerStyles({ isMobile })}
           data-expanded={isExpanded}
           onClick={handleToggleConsole}
@@ -54,14 +60,18 @@ const CommandConsole: React.FC = () => {
           <div className="flex items-center gap-2">
             <Code2 size={16} className="text-neon-green" />
             <span className="font-mono text-sm text-gray-400">
-              {t('console:title')}
+              {t("console:title")}
             </span>
           </div>
           {isMobile ? (
             <button
               onClick={handleToggleConsole}
               className="text-gray-400 p-2"
-              aria-label={isExpanded ? t('common:console.minimize') : t('common:console.expand')}
+              aria-label={
+                isExpanded
+                  ? t("common:console.minimize")
+                  : t("common:console.expand")
+              }
             >
               {isExpanded ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
             </button>
@@ -69,7 +79,7 @@ const CommandConsole: React.FC = () => {
             <button
               onClick={handleMinimize}
               className="text-gray-400 hover:text-white transition-colors"
-              aria-label={t('common:console.minimize')}
+              aria-label={t("common:console.minimize")}
             >
               <Minimize2 size={16} />
             </button>
@@ -77,14 +87,15 @@ const CommandConsole: React.FC = () => {
         </div>
 
         <div className={contentStyles({ isExpanded })}>
-          <div 
-            ref={historyRef} 
-            className={historyContainerStyles()}
-          >
+          <div ref={historyRef} className={historyContainerStyles()}>
             {history.map((line, i) => (
               <div key={i} className="mb-1">
-                {typeof line === 'string' ? (
-                  <span className={line.startsWith('>') ? 'text-neon-green' : 'text-gray-300'}>
+                {typeof line === "string" ? (
+                  <span
+                    className={
+                      line.startsWith(">") ? "text-neon-green" : "text-gray-300"
+                    }
+                  >
                     {line}
                   </span>
                 ) : (
@@ -93,7 +104,7 @@ const CommandConsole: React.FC = () => {
               </div>
             ))}
           </div>
-          
+
           <div className={inputContainerStyles()}>
             <div className="flex items-center gap-2">
               <span className="text-neon-green">$</span>
@@ -103,7 +114,7 @@ const CommandConsole: React.FC = () => {
                 onChange={handleInputChange}
                 onKeyPress={handleKeyPress}
                 className={inputStyles()}
-                placeholder={t('common:console.placeholder')}
+                placeholder={t("common:console.placeholder")}
                 rows={1}
               />
             </div>
@@ -115,7 +126,7 @@ const CommandConsole: React.FC = () => {
         <button
           onClick={handleToggleConsole}
           className={toggleButtonStyles()}
-          aria-label={t('common:console.toggle')}
+          aria-label={t("common:console.toggle")}
         >
           <Terminal size={20} className="text-neon-green" />
         </button>

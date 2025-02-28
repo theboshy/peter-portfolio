@@ -4,7 +4,7 @@
     "paths": {
       "#components/*": ["src/components/*"],
       "#hooks/*": ["src/hooks/*"],
-      "#types/*": ["src/types/*"],
+      "#commons/*": ["src/commons/*"],
       "#styles/*": ["src/styles/*"],
       "#utils/*": ["src/utils/*"],
       "#pom/*": ["tests/e2e/pom/*"],

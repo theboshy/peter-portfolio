@@ -1,36 +1,36 @@
-import React, { useState, useCallback } from 'react';
-import { Moon, Sun } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { ThemeProps } from '#types/common.ts';
+import React, { useState, useCallback } from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { ThemeProps } from "../../commons/types/common.ts";
 import {
   headerStyles,
   navStyles,
   linkStyles,
-  desktopNavStyles
-} from './Header.styles';
-import LanguageSelector from '../LanguageSelector/LanguageSelector';
-import HamburgerMenu from './HamburgerMenu';
+  desktopNavStyles,
+} from "./Header.styles";
+import LanguageSelector from "../LanguageSelector/LanguageSelector";
+import HamburgerMenu from "./HamburgerMenu";
 
-type HeaderProps = ThemeProps
+type HeaderProps = ThemeProps;
 
 const Header: React.FC<HeaderProps> = ({ isDark, setIsDark }) => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = useCallback(() => {
-    setIsMenuOpen(prev => !prev);
-    document.body.style.overflow = isMenuOpen ? 'auto' : 'hidden';
+    setIsMenuOpen((prev) => !prev);
+    document.body.style.overflow = isMenuOpen ? "auto" : "hidden";
   }, [isMenuOpen]);
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false);
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = "auto";
   }, []);
 
   const navLinks = [
-    { href: '#expertise', label: t('common:navigation.expertise') },
-    { href: '#projects', label: t('common:navigation.projects') },
-    { href: '#contact', label: t('common:navigation.contact') }
+    { href: "#expertise", label: t("common:navigation.expertise") },
+    { href: "#projects", label: t("common:navigation.projects") },
+    { href: "#contact", label: t("common:navigation.contact") },
   ];
 
   return (
@@ -50,14 +50,10 @@ const Header: React.FC<HeaderProps> = ({ isDark, setIsDark }) => {
             onClose={closeMenu}
             navLinks={navLinks}
           />
-          
+
           <div className={desktopNavStyles()}>
             {navLinks.map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                className={linkStyles({ isDark })}
-              >
+              <a key={href} href={href} className={linkStyles({ isDark })}>
                 {label}
               </a>
             ))}
@@ -65,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ isDark, setIsDark }) => {
             <button
               onClick={() => () => undefined}
               className="p-2 rounded-lg hover:bg-white/5 transition-colors"
-              aria-label={t('common:theme.toggle')}
+              aria-label={t("common:theme.toggle")}
             >
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>

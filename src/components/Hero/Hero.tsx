@@ -1,36 +1,24 @@
-import React, { useRef } from 'react';
-import { ArrowRight, Code, Sparkles } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import { useParticles } from './useParticles';
-import { useHeroSpotlight } from './useHeroSpotlight';
-import {
-  heroStyles,
-  titleStyles,
-  descriptionStyles,
-  buttonContainerStyles,
-  primaryButtonStyles,
-  secondaryButtonStyles,
-  starLayerStyles
-} from './Hero.styles';
-import type { HeroProps } from '#types/common';
+import React, { useRef } from "react";
+import { Code, Sparkles } from "lucide-react";
+import { useHeroSpotlight } from "./useHeroSpotlight";
+import { heroStyles, starLayerStyles } from "./Hero.styles";
+import type { HeroProps } from "#commons/types/common.ts";
+import AboutSection from "#components/AboutSection";
 
 const Hero: React.FC<HeroProps> = ({ isDark = true }) => {
   const heroRef = useRef<HTMLElement>(null);
-  const { particlesRef, handleScrollToContact } = useParticles();
   const { spotlightStyle } = useHeroSpotlight(heroRef, {
     size: 100,
-    color: isDark ? '#238636' : '#30363D',
-    opacity: 0.30,
+    color: isDark ? "#238636" : "#30363D",
+    opacity: 0.3,
     blur: 100,
-    enabled: isDark
+    enabled: isDark,
   });
 
   return (
-    <section ref={heroRef} className={heroStyles()}>
+    <section ref={heroRef} className={`${heroStyles()} pt-16 sm:pt-24 md:pt-32 lg:pt-40`}>
       <div className={starLayerStyles()} />
 
-      <div ref={particlesRef} className="fixed inset-0 pointer-events-none z-50" />
-      
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute pointer-events-none transition-opacity duration-300"
@@ -39,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ isDark = true }) => {
       </div>
 
       <BackgroundEffects />
-      <Content onContactClick={handleScrollToContact} />
+      <AboutSection />
       <ScrollIndicator />
     </section>
   );
@@ -55,62 +43,6 @@ const BackgroundEffects: React.FC = () => (
     </div>
   </div>
 );
-
-interface ContentProps {
-  onContactClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
-}
-
-const Content: React.FC<ContentProps> = ({ onContactClick }) => {
-  const { t } = useTranslation();
-  
-  return (
-    <div className="container mx-auto px-4 relative z-10">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className={titleStyles()}>
-          {t('hero:title')}
-        </h1>
-        <p className={descriptionStyles()}>
-          {t('hero:description')}
-        </p>
-        <CTAButtons onContactClick={onContactClick} />
-      </div>
-    </div>
-  );
-};
-
-interface CTAButtonsProps {
-  onContactClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
-}
-
-const CTAButtons: React.FC<CTAButtonsProps> = ({ onContactClick }) => {
-  const { t } = useTranslation();
-  
-  return (
-    <div className={buttonContainerStyles()}>
-      <a
-        href="#projects"
-        className={primaryButtonStyles()}
-      >
-        <span className="relative z-10 flex items-center">
-          {t('hero:cta.projects')}
-          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-        </span>
-      </a>
-      
-      <a
-        href="#contact-section"
-        onClick={onContactClick}
-        className={secondaryButtonStyles()}
-      >
-        <span className="relative z-10 flex items-center">
-          {t('hero:cta.contact')}
-          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-        </span>
-        <div className="absolute inset-0 bg-neon-green/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-      </a>
-    </div>
-  );
-};
 
 const ScrollIndicator: React.FC = () => (
   <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-10">

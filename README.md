@@ -6,7 +6,6 @@
 [![Playwright](https://img.shields.io/badge/Playwright-1.42.1-2EAD33.svg)](https://playwright.dev/)
 [![Jest](https://img.shields.io/badge/Jest-29.7.0-C21325.svg)](https://jestjs.io/)
 
-
 ### 🚀 About This Portfolio
 
 This portfolio serves as a demonstration of my skills as a Senior Software Engineer by showcasing well-structured, high-quality code and best practices in modern web development. The project is built with TypeScript, React, Vite, Jest, and Playwright, ensuring a robust, efficient, and scalable architecture.

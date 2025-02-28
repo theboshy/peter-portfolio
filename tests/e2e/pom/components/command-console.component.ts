@@ -1,4 +1,4 @@
-import { type Locator, type Page } from '@playwright/test';
+import { type Locator, type Page } from "@playwright/test";
 
 export class CommandConsoleComponent {
   readonly toggleButton: Locator;
@@ -8,11 +8,11 @@ export class CommandConsoleComponent {
   readonly minimizeButton: Locator;
 
   constructor(page: Page) {
-    this.toggleButton = page.getByRole('button', { name: /toggle console/i });
-    this.console = page.locator('.console');
-    this.input = page.locator('.console input');
-    this.output = page.locator('.console .output');
-    this.minimizeButton = page.getByRole('button', { name: /minimize/i });
+    this.toggleButton = page.getByRole("button", { name: /toggle console/i });
+    this.console = page.locator(".console");
+    this.input = page.locator(".console input");
+    this.output = page.locator(".console .output");
+    this.minimizeButton = page.getByRole("button", { name: /minimize/i });
   }
 
   async open() {
@@ -25,7 +25,7 @@ export class CommandConsoleComponent {
 
   async executeCommand(command: string) {
     await this.input.fill(command);
-    await this.input.press('Enter');
+    await this.input.press("Enter");
   }
 
   async getOutput() {

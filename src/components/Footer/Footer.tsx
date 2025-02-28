@@ -1,24 +1,23 @@
-import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import type { SocialLink } from '#types/common';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import type { SocialLink } from "#commons/types/common.ts";
 import {
   footerStyles,
   containerStyles,
   terminalTextStyles,
   socialLinksStyles,
-  socialLinkStyles
-} from './Footer.styles';
+  socialLinkStyles,
+} from "./Footer.styles";
+import {socialLinks} from "#commons/constans.ts";
 
 const Footer: React.FC = () => {
-  const { t } = useTranslation();
-  
+
   return (
     <footer className={footerStyles()}>
       <div className="container mx-auto px-4">
         <div className={containerStyles()}>
           <TerminalText />
-          <SocialLinks links={getSocialLinks(t)} />
+          <SocialLinks links={socialLinks} />
           <StatusText />
         </div>
       </div>
@@ -28,10 +27,10 @@ const Footer: React.FC = () => {
 
 const TerminalText: React.FC = () => {
   const { t } = useTranslation();
-  
+
   return (
     <div className={terminalTextStyles()}>
-      <span className="text-neon-green">$</span> echo "{t('footer:connect')}"
+      <span className="text-neon-green">$</span> echo "{t("footer:connect")}"
     </div>
   );
 };
@@ -62,18 +61,12 @@ const SocialLinkItem: React.FC<SocialLink> = ({ icon: Icon, href, label }) => (
 
 const StatusText: React.FC = () => {
   const { t } = useTranslation();
-  
+
   return (
     <div className={terminalTextStyles()}>
-      <span className="text-neon-green">status:</span> {t('footer:status')}
+      <span className="text-neon-green">status:</span> {t("footer:status")}
     </div>
   );
 };
-
-const getSocialLinks = (t: (key: string) => string): SocialLink[] => [
-  { icon: Github, href: 'https://github.com', label: t('common:social.github') },
-  { icon: Linkedin, href: 'https://linkedin.com', label: t('common:social.linkedin') },
-  { icon: Mail, href: 'mailto:contact@example.com', label: t('common:social.email') }
-];
 
 export default React.memo(Footer);

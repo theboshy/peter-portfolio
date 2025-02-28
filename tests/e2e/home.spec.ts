@@ -1,7 +1,7 @@
-import { test, expect } from '@playwright/test';
-import { HomePage } from './models/HomePage';
+import { test, expect } from "@playwright/test";
+import { HomePage } from "./models/HomePage";
 
-test.describe('Home Page', () => {
+test.describe("Home Page", () => {
   let homePage: HomePage;
 
   test.beforeEach(async ({ page }) => {
@@ -9,20 +9,20 @@ test.describe('Home Page', () => {
     await homePage.goto();
   });
 
-  test('should scroll to contact section when clicking Get in Touch', async () => {
+  test("should scroll to contact section when clicking Get in Touch", async () => {
     await homePage.clickGetInTouch();
-    await homePage.waitForScroll('#contact-section');
-    
-    const contactSection = await homePage.page.locator('#contact-section');
+    await homePage.waitForScroll("#contact-section");
+
+    const contactSection = await homePage.page.locator("#contact-section");
     await expect(contactSection).toBeInViewport();
   });
 
-  test('should handle contact form submission', async () => {
+  test("should handle contact form submission", async () => {
     await homePage.clickGetInTouch();
     await homePage.fillContactForm({
-      name: 'John Doe',
-      email: 'john@example.com',
-      message: 'Test message'
+      name: "John Doe",
+      email: "john@example.com",
+      message: "Test message",
     });
     await homePage.submitContactForm();
 
@@ -30,7 +30,7 @@ test.describe('Home Page', () => {
     await expect(homePage.contactForm).toContainText(/sending|message sent/i);
   });
 
-  test('should validate contact form fields', async () => {
+  test("should validate contact form fields", async () => {
     await homePage.clickGetInTouch();
     await homePage.submitContactForm();
 
@@ -40,26 +40,26 @@ test.describe('Home Page', () => {
     await expect(homePage.contactForm).toContainText(/message is required/i);
   });
 
-  test('should switch languages correctly', async () => {
+  test("should switch languages correctly", async () => {
     // Switch to Spanish
-    await homePage.changeLanguage('Español (CO)');
+    await homePage.changeLanguage("Español (CO)");
     await expect(homePage.getInTouchButton).toHaveText(/contactar/i);
 
     // Switch back to English
-    await homePage.changeLanguage('English');
+    await homePage.changeLanguage("English");
     await expect(homePage.getInTouchButton).toHaveText(/get in touch/i);
   });
 
-  test('should toggle theme', async () => {
-    const body = homePage.page.locator('body');
-    const initialTheme = await body.evaluate((el) => 
-      window.getComputedStyle(el).backgroundColor
+  test("should toggle theme", async () => {
+    const body = homePage.page.locator("body");
+    const initialTheme = await body.evaluate(
+      (el) => window.getComputedStyle(el).backgroundColor,
     );
 
     await homePage.toggleTheme();
 
-    const newTheme = await body.evaluate((el) => 
-      window.getComputedStyle(el).backgroundColor
+    const newTheme = await body.evaluate(
+      (el) => window.getComputedStyle(el).backgroundColor,
     );
     expect(newTheme).not.toBe(initialTheme);
   });
