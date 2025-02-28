@@ -10,8 +10,6 @@ import {
   headingStyles,
   messageStyles,
   buttonStyles,
-  suggestedLinksStyles,
-  linkStyles,
   languageSelectorStyles,
 } from "./ErrorPage.styles";
 
