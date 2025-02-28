@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Mail,
-  ArrowRight,
-  Rocket,
-} from "lucide-react";
+import { Mail, ArrowRight, Rocket } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import {
   sectionStyles,
@@ -13,7 +9,7 @@ import {
   submitButtonStyles,
 } from "./ContactSection.styles";
 import { useForm } from "#components/ContactSection/useForm.ts";
-import {socialLinks} from "#commons/constans.ts";
+import { socialLinks } from "#commons/constans.ts";
 
 const ContactSection: React.FC = () => {
   const { formData, handleChange, handleSubmit, isSubmitting, errors } =

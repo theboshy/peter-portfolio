@@ -16,7 +16,10 @@ const Hero: React.FC<HeroProps> = ({ isDark = true }) => {
   });
 
   return (
-    <section ref={heroRef} className={`${heroStyles()} pt-16 sm:pt-24 md:pt-32 lg:pt-40`}>
+    <section
+      ref={heroRef}
+      className={`${heroStyles()} pt-16 sm:pt-24 md:pt-32 lg:pt-40`}
+    >
       <div className={starLayerStyles()} />
 
       <div className="absolute inset-0 overflow-hidden">

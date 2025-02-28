@@ -8,10 +8,9 @@ import {
   socialLinksStyles,
   socialLinkStyles,
 } from "./Footer.styles";
-import {socialLinks} from "#commons/constans.ts";
+import { socialLinks } from "#commons/constans.ts";
 
 const Footer: React.FC = () => {
-
   return (
     <footer className={footerStyles()}>
       <div className="container mx-auto px-4">

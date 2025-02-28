@@ -1,5 +1,5 @@
 import React from "react";
-import {Star, Radio, Lightbulb} from "lucide-react";
+import { Star, Radio, Lightbulb } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useParallax } from "./useParallax";
 import {
@@ -10,8 +10,8 @@ import {
 } from "./AboutSection.styles";
 import CTAButtons from "#components/CTAButtons/CtaButtons.tsx";
 import { useParticles } from "#components/Hero/useParticles.ts";
-import {socialLinkStyles} from "#components/ContactSection/ContactSection.styles.ts";
-import {socialLinks} from "#commons/constans.ts";
+import { socialLinkStyles } from "#components/ContactSection/ContactSection.styles.ts";
+import { socialLinks } from "#commons/constans.ts";
 
 const AboutSection: React.FC = () => {
   const { parallaxRef } = useParallax();
@@ -60,7 +60,6 @@ const MainContent: React.FC<{
   </div>
 );
 
-
 const MissionOverview: React.FC = () => {
   const { t } = useTranslation();
 
@@ -79,21 +78,21 @@ const MissionOverview: React.FC = () => {
           </div>
         </div>
       </div>
-        <div className="flex items-center space-x-4 relative z-10">
-            {socialLinks.map((link, index) => (
-                <a
-                    key={index}
-                    href={link.href}
-                    target={link.href}
-                    rel="noopener noreferrer"
-                    className={socialLinkStyles()}
-                    aria-label={link.label}
-                    onClick={() => console.log(link.href)}
-                >
-                    <link.icon size={20} className="group-hover:animate-pulse" />
-                </a>
-            ))}
-        </div>
+      <div className="flex items-center space-x-4 relative z-10">
+        {socialLinks.map((link, index) => (
+          <a
+            key={index}
+            href={link.href}
+            target={link.href}
+            rel="noopener noreferrer"
+            className={socialLinkStyles()}
+            aria-label={link.label}
+            onClick={() => console.log(link.href)}
+          >
+            <link.icon size={20} className="group-hover:animate-pulse" />
+          </a>
+        ))}
+      </div>
     </div>
   );
 };
