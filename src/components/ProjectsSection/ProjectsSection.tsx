@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Project } from "../../commons/types/common.ts";
+import { Project } from "#commons/types/common.ts";
 import {
   sectionStyles,
   headerStyles,
@@ -16,33 +16,10 @@ const ProjectsSection: React.FC = () => {
 
   const projects: Project[] = [
     {
-      title: t("projects:projects.ecommerce.title"),
-      description: t("projects:projects.ecommerce.description"),
-      image:
-        "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800&q=80",
-      tech: t("projects:projects.ecommerce.tech", {
-        returnObjects: true,
-      }) as string[],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: t("projects:projects.aiContent.title"),
-      description: t("projects:projects.aiContent.description"),
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
-      tech: t("projects:projects.aiContent.tech", {
-        returnObjects: true,
-      }) as string[],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: t("projects:projects.financial.title"),
-      description: t("projects:projects.financial.description"),
-      image:
-        "https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&w=800&q=80",
-      tech: t("projects:projects.financial.tech", {
+      title: t("-"),
+      description: t("-"),
+      image: "",
+      tech: t("-", {
         returnObjects: true,
       }) as string[],
       liveUrl: "#",

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { ThemeProps } from "../../commons/types/common.ts";
+import { ThemeProps } from "#commons/types/common.ts";
 import {
   headerStyles,
   navStyles,
@@ -28,9 +28,9 @@ const Header: React.FC<HeaderProps> = ({ isDark, setIsDark }) => {
   }, []);
 
   const navLinks = [
-    { href: "#expertise", label: t("common:navigation.expertise") },
-    { href: "#projects", label: t("common:navigation.projects") },
-    { href: "#contact", label: t("common:navigation.contact") },
+    /*{ href: "#expertise", label: t("common:navigation.expertise") },
+    { href: "#projects", label: t("common:navigation.projects") },*/
+    { href: "#contact-section", label: t("common:navigation.contact") },
   ];
 
   return (

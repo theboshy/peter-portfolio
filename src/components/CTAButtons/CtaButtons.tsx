@@ -6,6 +6,7 @@ import {
   primaryButtonStyles,
   secondaryButtonStyles,
 } from "./CTAButtons.styles.ts";
+import { linkedInProjectsLink } from "#commons/constans.ts";
 
 interface CTAButtonsProps {
   onContactClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
@@ -16,7 +17,7 @@ const CTAButtons: React.FC<CTAButtonsProps> = ({ onContactClick }) => {
 
   return (
     <div className={buttonContainerStyles()}>
-      <a href="#projects" className={primaryButtonStyles()}>
+      <a href={linkedInProjectsLink} className={primaryButtonStyles()}>
         <span className="relative z-10 flex items-center">
           {t("hero:cta.projects")}
           <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

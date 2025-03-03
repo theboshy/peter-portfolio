@@ -1,6 +1,6 @@
 {
-  "title": "Trayectoria Profesional a Través del Tiempo",
-  "subtitle": "Una crónica de logros, hitos y crecimiento continuo",
+  "title": "Trayectoria Profesional a lo Largo del Tiempo",
+  "subtitle": "Una crónica de experiencias, reconocimientos y voluntariado",
   "types": {
     "achievement": "Logro",
     "education": "Educación",
@@ -9,44 +9,94 @@
     "award": "Premio"
   },
   "entries": {
-    "award2025": {
-      "date": "Ene 2025",
-      "title": "Premio al Liderazgo Técnico",
-      "description": "Reconocido por excelente liderazgo técnico y mentoría de equipo.",
+    "exp_growth2023": {
+      "type": "career",
+      "date": "Jul 2023 - Feb 2025",
+      "title": "Ingeniero de Software Senior L3",
+      "description": "Growth Acceleration Partners · Jornada completa · Bogotá, Distrito Capital, Colombia · Remoto. Tecnologías: Node.js, Python y 14 habilidades adicionales.",
       "achievements": [
-        "Lideré un equipo de 12 desarrolladores en 3 proyectos principales",
-        "Implementé prácticas innovadoras de CI/CD",
-        "Reduje el tiempo de despliegue en un 60%"
+        "Implementó soluciones escalables",
+        "Estableció estándares técnicos"
       ]
     },
-    "project2024Sep": {
-      "date": "Sep 2024",
-      "title": "Plataforma de Análisis con IA",
-      "description": "Arquitectura y lanzamiento de una plataforma revolucionaria de análisis usando IA de vanguardia.",
+    "exp_mjv_techlead2021": {
+      "type": "career",
+      "date": "Jun 2021 - Jun 2023",
+      "title": "Líder Técnico",
+      "description": "MJV Technology & Innovation · Jornada completa (3 años 9 meses en la empresa) · Bogotá, Distrito Capital, Colombia. Tecnologías: JavaScript, Amazon Web Services y 5 habilidades adicionales.",
+      "achievements": ["Lideró proyectos estratégicos"]
+    },
+    "exp_mjv_fullstack2019": {
+      "type": "career",
+      "date": "Oct 2019 - Jun 2021",
+      "title": "Desarrollador Full Stack",
+      "description": "MJV Technology & Innovation · Bogotá D.C., Colombia. Desarrolló aplicaciones web y APIs backend utilizando frameworks de JavaScript (Angular 12+, React JS, GraphQL y Node.js). Implementó arquitecturas y servicios de software, creó aplicaciones de escritorio con Python y Golang, trabajó en aplicaciones embebidas con Flutter, microservicios, clusters con Docker y Kubernetes, y diseñó interfaces gráficas. Tecnologías: JavaScript, Amazon Web Services y 11 habilidades adicionales.",
       "achievements": [
-        "Procesamiento de más de 1M de datos diarios",
-        "Logro de 99.9% de disponibilidad",
-        "Integración de modelos avanzados de machine learning"
+        "Desarrolló APIs robustas",
+        "Implementó arquitectura de microservicios"
       ]
     },
-    "career2024Jun": {
-      "date": "Jun 2024",
-      "title": "Líder Técnico Senior",
-      "description": "Promoción para liderar iniciativas técnicas y mentorear desarrolladores junior.",
+    "exp_freelance2018": {
+      "type": "career",
+      "date": "Oct 2018 - Nov 2019",
+      "title": "Desarrollador Full Stack",
+      "description": "Desarrollo de software freelance · Autónomo · Bogotá D.C., Colombia. Desarrolló aplicaciones multiplataforma con arquitectura de microservicios. Tecnologías: JavaScript, Amazon Web Services y 5 habilidades adicionales.",
       "achievements": [
-        "Supervisión de decisiones de arquitectura",
-        "Establecimiento de estándares técnicos",
-        "Impulso de iniciativas de innovación"
+        "Entregó con éxito proyectos multiplataforma",
+        "Optimizó el rendimiento en entornos reales"
       ]
     },
-    "education2024Mar": {
-      "date": "Mar 2024",
-      "title": "Certificación en Arquitectura Cloud",
-      "description": "Certificación avanzada en arquitectura cloud y sistemas distribuidos.",
+    "exp_lexco2017": {
+      "type": "career",
+      "date": "Ago 2017 - Sep 2018",
+      "title": "Analista de Sistemas de TI",
+      "description": "Lexco S.A. · Jornada completa. Análisis, diseño, desarrollo y mantenimiento de aplicaciones de gestión documental. Desarrolló herramientas para la comunicación en la adquisición de imágenes con escáneres multiplataforma mediante el protocolo TWAIN. Tecnologías: JavaScript, Java y 2 habilidades adicionales.",
       "achievements": [
-        "Dominio de patrones cloud-native",
-        "Especialización en arquitectura serverless",
-        "Estudio de protocolos avanzados de seguridad"
+        "Desarrolló soluciones de gestión documental",
+        "Optimización de procesos de digitalización",
+        "Integró eficazmente protocolos TWAIN"
+      ]
+    },
+    "exp_contact2016": {
+      "type": "career",
+      "date": "Oct 2016 - Abr 2017",
+      "title": "Desarrollador Front-end",
+      "description": "Contact Service · Ak. 106 #15a-33 a 15a-99, Bogotá D.C., Colombia. Diseñó y desarrolló un servicio de conexión en tiempo real para videollamadas, voz y transferencia de archivos utilizando tecnologías RTC y P2P. Tecnologías: JavaScript y Node.js.",
+      "achievements": [
+        "Desarrolló un sistema de comunicación en tiempo real",
+        "Mejoró la experiencia de usuario",
+        "Implementó exitosamente RTC y P2P"
+      ]
+    },
+    "award_senasoft2016": {
+      "type": "award",
+      "date": "Jul 2016",
+      "title": "Sena Soft 2016",
+      "description": "Expedido por SENA. Participó en la competencia Colombia Sena Soft (2016), obteniendo el 3º lugar en la categoría de desarrollo ágil web con Java. Más información: http://senasoft.sena.edu.co/#/",
+      "achievements": [
+        "Obtuvo el 3º lugar en desarrollo ágil con Java",
+        "Reconocido por soluciones web innovadoras"
+      ]
+    },
+    "volunteer_stackoverflow": {
+      "type": "achievement",
+      "date": "Jul 2015 - Presente",
+      "title": "Preguntas y Respuestas para Desarrolladores",
+      "description": "Stack Overflow · Ciencia y Tecnología.",
+      "achievements": [
+        "2 Medallas de Oro",
+        "Más de 160k personas alcanzadas",
+        "Ayudó a la comunidad con la resolución de problemas complejos"
+      ]
+    },
+    "volunteer_oracle": {
+      "type": "achievement",
+      "date": "Abr 2018",
+      "title": "Preguntas y Respuestas para Desarrolladores - Oracle Code 2018",
+      "description": "Oracle · Ciencia y Tecnología.",
+      "achievements": [
+        "Participó activamente en foros de Oracle",
+        "Proporcionó asesoría en desafíos de desarrollo especializado"
       ]
     }
   }

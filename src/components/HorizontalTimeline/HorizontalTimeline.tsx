@@ -1,14 +1,7 @@
 import React, { useRef, useEffect } from "react";
-import {
-  Calendar,
-  Award,
-  Briefcase,
-  GraduationCap,
-  Rocket,
-  Trophy,
-} from "lucide-react";
+import { Calendar } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { TimelineEntry } from "../../commons/types/common.ts";
+import { TimelineEntry, TimelineEntryType } from "#commons/types/common.ts";
 import { useTimelineScroll } from "./useTimelineScroll";
 import {
   timelineStyles,
@@ -16,6 +9,11 @@ import {
   timelineCardStyles,
   cardContentStyles,
 } from "./HorizontalTimeline.styles";
+import {
+  nodeColors,
+  trajectoryColors,
+  trajectoryIcons,
+} from "#commons/constans.ts";
 
 const HorizontalTimeline: React.FC = () => {
   const { t } = useTranslation();
@@ -36,17 +34,22 @@ const HorizontalTimeline: React.FC = () => {
   }, [cleanup]);
 
   const timelineEntries = [
-    "award2025",
-    "project2024Sep",
-    "career2024Jun",
-    "education2024Mar",
+    "exp_growth2023",
+    "exp_mjv_techlead2021",
+    "exp_mjv_fullstack2019",
+    "exp_freelance2018",
+    "exp_lexco2017",
+    "exp_contact2016",
+    "award_senasoft2016",
+    "volunteer_stackoverflow",
+    "volunteer_oracle",
   ];
 
   const timelineData: TimelineEntry[] = timelineEntries.map((entryKey) => ({
+    type: t(`timeline:entries.${entryKey}.type`) as TimelineEntryType,
     date: t(`timeline:entries.${entryKey}.date`),
     title: t(`timeline:entries.${entryKey}.title`),
     description: t(`timeline:entries.${entryKey}.description`),
-    type: entryKey.replace(/\d+.*$/, "") as TimelineEntry["type"],
     achievements: t(`timeline:entries.${entryKey}.achievements`, {
       returnObjects: true,
     }) as string[],
@@ -94,14 +97,6 @@ const TimelineCard: React.FC<{ entry: TimelineEntry }> = ({ entry }) => (
 );
 
 const TimelineNode: React.FC<{ type: string }> = ({ type }) => {
-  const nodeColors: Record<string, string> = {
-    achievement: "bg-purple-500",
-    education: "bg-blue-500",
-    career: "bg-neon-green",
-    project: "bg-amber-500",
-    award: "bg-rose-500",
-  };
-
   return (
     <>
       <div className="absolute top-8 left-0 w-full h-0.5 bg-tech-gray" />
@@ -115,15 +110,8 @@ const TimelineNode: React.FC<{ type: string }> = ({ type }) => {
 };
 
 const CardContent: React.FC<{ entry: TimelineEntry }> = ({ entry }) => {
-  const icons = {
-    achievement: Trophy,
-    education: GraduationCap,
-    career: Briefcase,
-    project: Rocket,
-    award: Award,
-  };
-
-  const IconComponent = icons[entry.type as keyof typeof icons] || Calendar;
+  const IconComponent =
+    trajectoryIcons[entry.type as keyof typeof trajectoryIcons] || Calendar;
 
   return (
     <div className={cardContentStyles()}>
@@ -152,14 +140,7 @@ const CardContent: React.FC<{ entry: TimelineEntry }> = ({ entry }) => {
 };
 
 const getTypeColor = (type: string): string => {
-  const colors: Record<string, string> = {
-    achievement: "text-purple-500",
-    education: "text-blue-500",
-    career: "text-neon-green",
-    project: "text-amber-500",
-    award: "text-rose-500",
-  };
-  return colors[type] || "text-neon-green";
+  return trajectoryColors[type] || "text-neon-green";
 };
 
 export default React.memo(HorizontalTimeline);

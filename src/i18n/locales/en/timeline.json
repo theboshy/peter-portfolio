@@ -1,6 +1,6 @@
 {
   "title": "Professional Journey Through Time",
-  "subtitle": "A chronicle of achievements, milestones, and continuous growth",
+  "subtitle": "A chronicle of experiences, recognitions, and volunteer work",
   "types": {
     "achievement": "Achievement",
     "education": "Education",
@@ -9,44 +9,94 @@
     "award": "Award"
   },
   "entries": {
-    "award2025": {
-      "date": "Jan 2025",
-      "title": "Tech Leadership Award",
-      "description": "Recognized for outstanding technical leadership and team mentorship.",
+    "exp_growth2023": {
+      "type": "career",
+      "date": "Jul 2023 - Feb 2025",
+      "title": "Senior Software Engineer L3",
+      "description": "Growth Acceleration Partners · Full Time · Bogotá, Distrito Capital, Colombia · Remote. Technologies: Node.js, Python and 14 additional skills.",
       "achievements": [
-        "Led a team of 12 developers across 3 major projects",
-        "Implemented innovative CI/CD practices",
-        "Reduced deployment time by 60%"
+        "Implemented scalable solutions",
+        "Established technical standards"
       ]
     },
-    "project2024Sep": {
-      "date": "Sep 2024",
-      "title": "AI-Powered Analytics Platform",
-      "description": "Architected and launched a revolutionary analytics platform using cutting-edge AI.",
+    "exp_mjv_techlead2021": {
+      "type": "career",
+      "date": "Jun 2021 - Jun 2023",
+      "title": "Tech Lead",
+      "description": "MJV Technology & Innovation · Full Time (3 years 9 months at the company) · Bogotá, Distrito Capital, Colombia. Technologies: JavaScript, Amazon Web Services and 5 additional skills.",
+      "achievements": ["Led strategic projects"]
+    },
+    "exp_mjv_fullstack2019": {
+      "type": "career",
+      "date": "Oct 2019 - Jun 2021",
+      "title": "Full Stack Software Developer",
+      "description": "MJV Technology & Innovation · Bogotá D.C., Colombia. Developed web applications and backend APIs using JavaScript frameworks (Angular 12+, React JS, GraphQL, and Node.js). Implemented software architectures and services, created desktop applications using Python and Golang, worked on embedded applications with Flutter, microservices, Docker and Kubernetes clusters, and designed graphical user interfaces. Technologies: JavaScript, Amazon Web Services and 11 additional skills.",
       "achievements": [
-        "Processed over 1M data points daily",
-        "Achieved 99.9% uptime",
-        "Integrated advanced machine learning models"
+        "Developed robust APIs",
+        "Implemented microservices architecture"
       ]
     },
-    "career2024Jun": {
-      "date": "Jun 2024",
-      "title": "Senior Technical Lead",
-      "description": "Promoted to lead technical initiatives and mentor junior developers.",
+    "exp_freelance2018": {
+      "type": "career",
+      "date": "Oct 2018 - Nov 2019",
+      "title": "Full-stack Developer",
+      "description": "Freelance software development · Self-employed · Bogotá D.C., Colombia. Developed cross-platform applications with a microservices architecture. Technologies: JavaScript, Amazon Web Services and 5 additional skills.",
       "achievements": [
-        "Oversee architecture decisions",
-        "Establish technical standards",
-        "Drive innovation initiatives"
+        "Successfully delivered cross-platform projects",
+        "Optimized real-world performance"
       ]
     },
-    "education2024Mar": {
-      "date": "Mar 2024",
-      "title": "Cloud Architecture Certification",
-      "description": "Advanced certification in cloud architecture and distributed systems.",
+    "exp_lexco2017": {
+      "type": "career",
+      "date": "Aug 2017 - Sep 2018",
+      "title": "IT Systems Analyst",
+      "description": "Lexco S.A. · Full Time. Analysis, design, development, and maintenance of document management applications. Developed tools for image acquisition communication with multi-platform scanners via the TWAIN protocol. Technologies: JavaScript, Java and 2 additional skills.",
       "achievements": [
-        "Mastered cloud-native patterns",
-        "Specialized in serverless architecture",
-        "Studied advanced security protocols"
+        "Developed document management solutions",
+        "Streamlined digitization processes",
+        "Effectively integrated TWAIN protocols"
+      ]
+    },
+    "exp_contact2016": {
+      "type": "career",
+      "date": "Oct 2016 - Apr 2017",
+      "title": "Front-end Developer",
+      "description": "Contact Service · Ak. 106 #15a-33 to 15a-99, Bogotá D.C., Colombia. Designed and developed a real-time connection service for video calls, voice, and file transfer using RTC and P2P technologies. Technologies: JavaScript and Node.js.",
+      "achievements": [
+        "Developed real-time communication system",
+        "Enhanced user experience",
+        "Successfully implemented RTC and P2P"
+      ]
+    },
+    "award_senasoft2016": {
+      "type": "award",
+      "date": "Jul 2016",
+      "title": "Sena Soft 2016",
+      "description": "Issued by SENA. Participated in the Colombia Sena Soft competition (2016), ranking 3rd in the agile Java web development category. More info: http://senasoft.sena.edu.co/#/",
+      "achievements": [
+        "Achieved 3rd place in agile Java web development",
+        "Recognized for innovative web solutions"
+      ]
+    },
+    "volunteer_stackoverflow": {
+      "type": "achievement",
+      "date": "Jul 2015 - Present",
+      "title": "Q&A for developers",
+      "description": "Stack Overflow · Science and Technology.",
+      "achievements": [
+        "2 Gold Medals",
+        "Over 160k people reached",
+        "Assisted community with complex problem-solving"
+      ]
+    },
+    "volunteer_oracle": {
+      "type": "achievement",
+      "date": "Apr 2018",
+      "title": "Q & A for developers - oracle code 2018",
+      "description": "Oracle · Science and Technology.",
+      "achievements": [
+        "Actively participated in Oracle forums",
+        "Provided guidance on specialized development challenges"
       ]
     }
   }

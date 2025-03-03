@@ -2,7 +2,6 @@ import Header from "#components/Header";
 import Hero from "#components/Hero";
 import ExpertiseSection from "#components/ExpertiseSection";
 import HorizontalTimeline from "#components/HorizontalTimeline";
-import ProjectsSection from "#components/ProjectsSection";
 import ContactSection from "#components/ContactSection";
 import CommandConsole from "#components/CommandConsole";
 import Footer from "#components/Footer";
@@ -22,7 +21,6 @@ function Home() {
           <Hero isDark={isDark} />
           <ExpertiseSection />
           <HorizontalTimeline />
-          <ProjectsSection />
           <ContactSection />
         </main>
         <CommandConsole />
